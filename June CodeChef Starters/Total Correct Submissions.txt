@@ -1,0 +1,64 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+bool valcamparison(pair<string, int>&a, pair<string, int>&b) {
+  return a.second < b.second;
+}
+
+
+int main()
+{
+
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+
+#ifndef ONLINE_JUDGE
+  freopen("input.txt", "r", stdin);
+  freopen("error.txt", "w", stderr);
+  freopen("output.txt", "w", stdout);
+#endif
+
+
+  int t;
+  cin >> t;
+  while (t--) {
+    int n;
+    cin >> n;
+    map<string, int> val;
+
+    vector <pair<string, int>> v;
+
+    for (int i = 1; i <= n * 3; i++) {
+      string s;
+      int x;
+      cin >> s >> x;
+      auto it = val.find(s);
+      if (it != val.end())
+      {
+        val[s] = it->second + x;
+      }
+      else
+      {
+        val[s] = x;
+      }
+    }
+
+    for (auto & it : val) {
+      v.push_back(it);
+    }
+
+    sort(v.begin(), v.end(), valcamparison);
+
+    for (auto&it : v) {
+      cout << it.second << " ";
+    }
+    cout << endl ;
+  }
+
+
+  return 0;
+
+}
+

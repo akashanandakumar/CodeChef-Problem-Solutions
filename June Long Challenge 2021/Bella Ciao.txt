@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+void solve() {
+    long long D,d,P,Q,N;
+    cin >> D >> d >> P >> Q;
+    long money=0;
+    N = D/d;
+    
+        if(N%2==0){
+            money +=d*((N/2)*(2*P+(N-1)*Q));
+        }
+        else {
+            money +=d*(N*(P+((N-1)/2)*Q));
+        }
+    
+    
+    money += (D%d)* (P+(N)*Q);
+    cout << money << endl;
+}
+
+int main() {
+	// your code goes here
+	int t ;
+	cin >> t;
+	while(t--){
+	   solve();
+	}
+	return 0;
+}
+

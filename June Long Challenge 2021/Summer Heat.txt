@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+void solve() {
+    int xa,xb,Xa,Xb;
+    cin >> xa >> xb >> Xa >> Xb;
+    int ans1 = Xa/xa;
+    int ans2 = Xb/xb;
+    int res = ans1 + ans2;
+    cout << res;
+}
+
+int main() {
+	// your code goes here
+	int t;
+	cin >> t;
+	while(t--){
+	    solve();
+	    cout << endl;
+	}
+	return 0;
+}
+

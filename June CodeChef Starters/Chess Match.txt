@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+int main()
+{
+
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+
+#ifndef ONLINE_JUDGE
+  freopen("input.txt", "r", stdin);
+  freopen("error.txt", "w", stderr);
+  freopen("output.txt", "w", stdout);
+#endif
+  long long int t;
+  cin >> t;
+  while (t--) {
+    int n , a , b;
+    cin >> n >> a >> b ;
+    int x = (180 + n) * 2;
+    int y = a + b ;
+    int z = x - y;
+    cout << z << endl;
+  }
+  return 0;
+
+}
+

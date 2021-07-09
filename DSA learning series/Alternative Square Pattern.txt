@@ -1,0 +1,46 @@
+Problem Link : https://www.codechef.com/CCSTART2/problems/SQALPAT/
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+
+#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("error.txt", "w", stderr);
+	freopen("output.txt", "w", stdout);
+#endif
+	int n ; cin >>  n ;
+	int od = 0;
+	int evn;
+	int sum = 0;
+	for (int i = 1; i <= n; i++) {
+		if ((i % 2) == 1) {
+			od = sum;
+			for (int j = 1; j <= 5; j++) {
+				od += 1;
+				cout << od << " ";
+			}
+			sum = od ;
+		}
+		else if ((i % 2) == 0) {
+			sum += 5;
+			evn = sum;
+			for (int k = 1; k <= 5; k++) {
+				cout << evn << " ";
+				evn -= 1;
+
+			}
+		}
+		cout << endl;
+
+	}
+	return 0;
+}
+
+

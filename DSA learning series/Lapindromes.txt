@@ -1,0 +1,39 @@
+Problem Link : https://www.codechef.com/LRNDSA01/problems/LAPIN/
+
+
+#include <iostream>
+using namespace std;
+
+
+bool lapin(string s){
+    int count[26]={0};
+    int n = s.length();
+    for(int i=0,j=n-1;i<j;i++,j--){
+        count[s[i]-'a']++;
+        count[s[j]-'a']--;
+    }
+    for(int k=0;k<26;k++){
+        if(count[k]!=0){
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+	// your code goes here
+	int t ;
+	cin >> t;
+	while(t--){
+	    string s;
+	    cin >> s;
+	   bool res = lapin(s);
+	   if(res){
+	       cout << "YES" <<  endl;
+	   }else{ 
+	       cout << "NO" <<  endl;
+	       
+	   }
+	}
+	return 0;
+}
